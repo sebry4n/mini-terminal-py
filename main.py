@@ -4,7 +4,7 @@ from terminal import terminal
 class TerminalGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("Mini Terminal")
+        self.root.title("Chimken Terminal")
 
         self.core = terminal()
         self.prompt = f"{self.core.cwd} > "
@@ -12,7 +12,7 @@ class TerminalGUI:
         self.text = tk.Text(root, bg="black", fg="white", insertbackground="white",
                             font=("Helvetica", 12), wrap=tk.WORD)
         self.text.pack(expand=True, fill=tk.BOTH)
-        self.text.insert(tk.END, f"Mini Terminal (type 'exit' to quit)\n{self.prompt}")
+        self.text.insert(tk.END, f"Chimken Terminal [ketik 'exit' untuk keluar]\n{self.prompt}")
         self.text.focus()
 
         self.text.bind("<Return>", self.on_enter)
