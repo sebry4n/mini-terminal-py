@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import font
 from terminal import terminal
 
 class TerminalGUI:
@@ -13,8 +12,7 @@ class TerminalGUI:
         self.text = tk.Text(root, bg="black", fg="white", insertbackground="white",
                             font=("Helvetica", 12), wrap=tk.WORD)
         self.text.pack(expand=True, fill=tk.BOTH)
-
-        self.text.insert(tk.END, f"Welcome to Chimken Terminal [type 'exit' to quit]\n{self.prompt}")
+        self.text.insert(tk.END, f"Chimken Terminal [ketik 'exit' untuk keluar]\n{self.prompt}")
         self.text.focus()
 
         self.text.bind("<Return>", self.on_enter)

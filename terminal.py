@@ -17,30 +17,30 @@ class terminal:
         if cmd == "exit":
             return "exit"  # signal to quit
 
-        elif cmd == "cd":
+        elif cmd == "opend":
             if not args:
-                return "Usage: cd [path]"
+                return "How to: opend [path]"
             try:
                 os.chdir(args[0])
                 self.cwd = os.getcwd()
             except Exception as e:
-                return f"cd error: {e}"
+                return f"opend error: {e}"
             return ""
 
-        elif cmd == "ls":
+        elif cmd == "lookd":
             try:
                 return "\n".join(os.listdir(self.cwd))
             except Exception as e:
-                return f"ls error: {e}"
+                return f"lookd error: {e}"
 
-        elif cmd == "makedir":
+        elif cmd == "mdirect":
             if not args:
-                return "Usage: makedir [dirname]"
+                return "How to: mdirect [dirname]"
             try:
                 os.mkdir(args[0])
-                return f"Directory '{args[0]}' created."
+                return f"Directory '{args[0]}' terbuat."
             except Exception as e:
-                return f"makedir error: {e}"
+                return f"mdirect error: {e}"
 
         elif cmd == "rmdir":
             if not args:
