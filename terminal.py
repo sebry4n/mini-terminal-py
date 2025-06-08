@@ -74,7 +74,10 @@ class terminal:
                 return f"rename error: {e}"
 
         elif cmd == "mikel":
-            return "KONTOL"
+            return "Hartoyo"
+        
+        elif cmd == "edu":
+            return "Nata"
 
         else:
             return f"Unknown command: {cmd}"
