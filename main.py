@@ -33,7 +33,10 @@ class TerminalGUI:
             self.root.quit()
             return "break"
 
-        if result:
+        if result == "__clear__":
+            self.text.delete("1.0", tk.END)  # Clear all text
+            self.text.insert(tk.END, f"Chimken Terminal [ketik 'exit' untuk keluar]\n")
+        elif result:
             self.text.insert(tk.END, result + "\n")
 
         self.prompt = f"{self.core.cwd} > "

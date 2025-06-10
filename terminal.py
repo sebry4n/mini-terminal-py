@@ -61,8 +61,7 @@ class terminal:
                 return f"run error: {e}"
 
         elif cmd == "clear":
-            os.system('cls' if platform.system() == 'Windows' else 'clear')
-            return ""
+            return "__clear__"
 
         elif cmd == "rename":
             if len(args) != 2:
