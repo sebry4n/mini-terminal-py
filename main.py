@@ -12,7 +12,7 @@ class TerminalGUI:
         self.text = tk.Text(root, bg="black", fg="white", insertbackground="white",
                             font=("Helvetica", 12), wrap=tk.WORD)
         self.text.pack(expand=True, fill=tk.BOTH)
-        self.text.insert(tk.END, f"Chimken Terminal [ketik 'exit' untuk keluar]\n{self.prompt}")
+        self.text.insert(tk.END, f"Chimken Terminal [ketik 'exit' untuk keluar, ketik 'list' untuk list cmd]\n{self.prompt}")
         self.text.focus()
 
         self.text.bind("<Return>", self.on_enter)
@@ -34,8 +34,8 @@ class TerminalGUI:
             return "break"
 
         if result == "__clear__":
-            self.text.delete("1.0", tk.END)  # Clear all text
-            self.text.insert(tk.END, f"Chimken Terminal [ketik 'exit' untuk keluar]\n")
+            self.text.delete("1.0", tk.END) 
+            self.text.insert(tk.END, f"Chimken Terminal [ketik 'exit' untuk keluar, ketik 'list' untuk list cmd]\n")
         elif result:
             self.text.insert(tk.END, result + "\n")
 

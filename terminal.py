@@ -1,6 +1,7 @@
 import os
 import subprocess
 import platform
+import webbrowser
 
 class terminal:
     def __init__(self):
@@ -77,6 +78,39 @@ class terminal:
         
         elif cmd == "edu":
             return "Nata"
+        
+        elif cmd == "palel":
+            return "papaw"
+        
+        elif cmd == "buka":
+            if not args:
+                return "How to : buka [blablabla.urextension]"
+            try:
+                os.startfile(args[0])
+                return f"opened '{args[0]}'."
+            except Exception as e:
+                return f"buka error: {e}"
+            
+        elif cmd == "make":
+            if not args:
+                return "How to : make [blablabla.urxtensuin]"
+            try:
+                open(args[0], "w").close()
+                return f"made '{args[0]}' text."
+            except Exception as e:
+                return f"buka error: {e}"
+            
+        elif cmd == "web":
+            if not args:
+                return "How to : web [url]"
+            try:
+                webbrowser.open(f"{args[0]}")
+                return f"web terbuka '{args[0]}'"
+            except Exception as e:
+                return f"web error: {e}"
+            
+        elif cmd == "list":
+                return " exit\n opend\n lookd\n mdirect\n rmdir\n run\n clear\n buka\n make\n web\n"
 
         else:
             return f"Unknown command: {cmd}"
